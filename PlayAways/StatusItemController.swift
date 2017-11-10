@@ -70,6 +70,14 @@ final class StatusItemController {
         let pathItem = NSMenuItem(title: NSLocalizedString("Set Path…", comment: "Set Path…"), action: #selector(AppDelegate.setPath(_:)), keyEquivalent: "p")
         m.addItem(pathItem)
         
+        // Separator
+        m.addItem(NSMenuItem.separator())
+
+        // About
+        let aboutItem = NSMenuItem(title: NSLocalizedString("About…", comment: "About…"),
+                                   action: #selector(AppDelegate.about(_:)), keyEquivalent: "")
+        m.addItem(aboutItem)
+        
         // Quit
         let quitItem = NSMenuItem(title: NSLocalizedString("Quit", comment: "Quit"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         m.addItem(quitItem)

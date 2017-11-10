@@ -36,5 +36,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func setPath(_ sender: NSMenuItem) {
         _ = router.storageLocationShowingPanelIfNeeded(force: true)
     }
+    
+    @IBAction func about(_ sender: NSMenuItem) {
+        if let aboutURL = URL(string: "https://github.com/Krishna/PlayAlways") {
+            NSWorkspace.shared().open(aboutURL)
+        } else {
+            NSLog("Invalid About URL specified.")
+        }
+    }
 }
 

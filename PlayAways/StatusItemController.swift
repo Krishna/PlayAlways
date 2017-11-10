@@ -22,38 +22,43 @@ final class StatusItemController {
     private let menu: NSMenu = {
         let m = NSMenu(title: "PlayAlways")
         
-        // New iOS Playground
-        let newEmbeddedItem = NSMenuItem(title: NSLocalizedString("New iOS Playground", comment: "New iOS Playgroud menu item"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "1")
+        // New iOS Playground (with path selection)
+        let newEmbeddedItem = NSMenuItem(title: NSLocalizedString("New iOS Playground...", comment: "New iOS Playgroud menu item with ellipsis"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "1")
         newEmbeddedItem.tag = MenuOptions.iOS.rawValue
+        newEmbeddedItem.tag = MenuOptions.iOSWithPanel.rawValue
         m.addItem(newEmbeddedItem)
         
-        // New iOS Playground (with path selection)
-        let newEmbeddedItemAlternate = NSMenuItem(title: NSLocalizedString("New iOS Playground…", comment: "New iOS Playgroud menu item (alternate, with ellipsis)"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "1")
-        newEmbeddedItemAlternate.tag = MenuOptions.iOSWithPanel.rawValue
+        
+        // New iOS Playground
+        let newEmbeddedItemAlternate = NSMenuItem(title: NSLocalizedString("New iOS Playground", comment: "New iOS Playgroud menu item (alternate)"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "1")
+        
         newEmbeddedItemAlternate.isAlternate = true
         newEmbeddedItemAlternate.keyEquivalentModifierMask = [.command, .option]
         m.addItem(newEmbeddedItemAlternate)
         
-        // New macOS Playground
-        let newMacItem = NSMenuItem(title: NSLocalizedString("New macOS Playground", comment: "New macOS Playgroud menu item"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "2")
+        // New macOS Playground (with path selection)
+        let newMacItem = NSMenuItem(title: NSLocalizedString("New macOS Playground...", comment: "New macOS Playgroud menu item with ellipsis"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "2")
         newMacItem.tag = MenuOptions.macOS.rawValue
+        newMacItem.tag = MenuOptions.macOSWithPanel.rawValue
         m.addItem(newMacItem)
         
-        // New macOS Playground (with path selection)
-        let newMacItemAlternate = NSMenuItem(title: NSLocalizedString("New macOS Playground…", comment: "New macOS Playgroud menu item (alternate, with ellipsis)"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "2")
-        newMacItemAlternate.tag = MenuOptions.macOSWithPanel.rawValue
+        
+        // New macOS Playground
+        let newMacItemAlternate = NSMenuItem(title: NSLocalizedString("New macOS Playground", comment: "New macOS Playgroud menu item (alternate)"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "2")
+        
         newMacItemAlternate.isAlternate = true
         newMacItemAlternate.keyEquivalentModifierMask = [.command, .option]
         m.addItem(newMacItemAlternate)
         
-        // New tvOS Playground
-        let newTVItem = NSMenuItem(title: NSLocalizedString("New tvOS Playground", comment: "New tvOS Playgroud menu item"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "3")
+        // New tvOS Playground  (with path selection)
+        let newTVItem = NSMenuItem(title: NSLocalizedString("New tvOS Playground...", comment: "New tvOS Playgroud menu item with ellipsis"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "3")
         newTVItem.tag = MenuOptions.tvOS.rawValue
+        newTVItem.tag = MenuOptions.tvOSWithPanel.rawValue
         m.addItem(newTVItem)
         
-        // New tvOS Playground (with path selection)
-        let newTVItemAlternate = NSMenuItem(title: NSLocalizedString("New tvOS Playground…", comment: "New tvOS Playgroud menu item (alternate, with ellipsis)"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "3")
-        newTVItemAlternate.tag = MenuOptions.tvOSWithPanel.rawValue
+        // New tvOS Playground
+        let newTVItemAlternate = NSMenuItem(title: NSLocalizedString("New tvOS Playground", comment: "New tvOS Playgroud menu item (alternate)"), action: #selector(AppDelegate.createNewPlayground(sender:)), keyEquivalent: "3")
+        
         newTVItemAlternate.isAlternate = true
         newTVItemAlternate.keyEquivalentModifierMask = [.command, .option]
         m.addItem(newTVItemAlternate)

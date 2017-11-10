@@ -1,3 +1,10 @@
+## PlayAlways - Modifications
+
+- Made the default menu options require the user to specify a filename for the Playgrounds
+	- The alternative menu options are now used when you just want to create a Playground without giving it a name.
+- Added an About menu item that opens a browser page to this GitHub repo.
+
+
 ## PlayAlways - Create playgrounds quickly
 
 PlayAlways is a menubar app to quickly create new iOS or macOS playgrounds.
